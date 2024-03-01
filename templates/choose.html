@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>start</title>
+    <link rel="stylesheet" href="/static/css/start.css" type="text/css">    <!--引入使用的css文件-->
+    <style type="text/css">
+            .btnleft
+        {
+            width:375px;
+            height:225px;
+            background:url("/static/images/choose4.jpg") repeat-x left top;
+            padding-bottom:2px;
+            font-size:50px;
+            font-family:KaiTi;
+            color:white;
+            background:rgba(96, 56, 17, 0.2);
+            border-width:0px;	/*边框透明*/
+            outline:none;	/*点击后没边框*/
+        }
+        .btnright
+        {
+            width:375px;
+            height:225px;
+            background:url("/static/images/choose4.jpg") repeat-x left top;
+            padding-bottom:2px;
+            font-size:50px;
+            font-family:KaiTi;
+            color:white;
+            background:rgba(96, 56, 17, 0.2);
+            border-width:0px;	/*边框透明*/
+            outline:none;	/*点击后没边框*/
+        }
+    </style>
+</head>
+
+<body background="/static/images/choose1.jpg" style="background-repeat: no-repeat; background-size: 100%;">
+    
+    <div style="margin-left:200px;margin-top:250px">
+        <input type="button" class="btnleft"  value="我是读者" onclick='location.href=("login")' /><br/>
+    </div>
+    <div style="margin-left:900px;margin-top:-220px">
+        <input type="button" class="btnright"  value="我是管理员" onclick='location.href=("admin_login")' /><br/>
+    </div>
+
+</body>
+</html>
