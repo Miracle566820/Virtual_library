@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>login</title>
+<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/static//css/demo.css" />
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+<!--[if IE]>
+<script src="js/html5.js"></script>
+<![endif]-->
+<style type="text/css">
+    .btnmid
+{
+    width:375px;
+    height:225px;
+    padding-bottom:2px;
+    font-size:40px;
+    font-family:STFangsong;
+    color:white;
+    background: rgba(220, 38, 38, 0);;
+    border-width:0px;	/*边框透明*/
+    outline:none;	/*点击后没边框*/
+
+
+}
+.logo_box1{
+    width: 400px;
+    height: 500px;
+    padding: 35px;
+    color: #EEE;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: -200px;
+    margin-top: -450px;
+}
+.logo_box2{
+    width: 400px;
+    height: 500px;
+    padding: 35px;
+    color: #EEE;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: -125px;
+    margin-top: -350px;
+}
+.logo_box3{
+    width: 200px;
+    height: 500px;
+    padding: 35px;
+    color: #EEE;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: -650px;
+    margin-top: -250px;
+}
+.logo_box4{
+    width: 200px;
+    height: 500px;
+    padding: 35px;
+    color: #EEE;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: 150px;
+    margin-top: -250px;
+}
+.logo_box5{
+    width: 200px;
+    height: 500px;
+    padding: 35px;
+    color: #EEE;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: -650px;
+    margin-top: -100px;
+}
+.logo_box6{
+    width: 200px;
+    height: 500px;
+    padding: 35px;
+    color: #EEE;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: 150px;
+    margin-top: -100px;
+}
+.logo_box7{
+    width: 200px;
+    height: 500px;
+    padding: 35px;
+    color: #EEE;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: -650px;
+    margin-top: 50px;
+}
+
+</style>
+</head>
+<body>
+		<div class="container demo-1">
+			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<div class="logo_box1" >
+                        <input type="text" class="btnmid"  value="欢迎你,尊贵的管理员！"/><br/>
+					</div>
+                    <div class="logo_box2">
+                        <input type="text" class="btnmid"   value="请问您需要："/><br/>
+					</div>
+                    <div class="logo_box3">
+                        <input type="button" class="btnmid"  value="1.添加书籍" onclick='location.href=("admin_operate")'/><br/>
+					</div>
+                    <div class="logo_box4">
+                        <input type="button" class="btnmid"  value="2.删除书籍" onclick='location.href=("admin_operate")'/><br/>
+					</div>
+                    <div class="logo_box5">
+                        <input type="button" class="btnmid"  value="3.添加读者信息" onclick='location.href=("admin_operate")'/><br/>
+					</div>
+                    <div class="logo_box6">
+                        <input type="button" class="btnmid"  value="4.删除读者信息" onclick='location.href=("admin_operate")'/><br/>
+					</div>
+                    <div class="logo_box7">
+                        <input type="button" class="btnmid"  value="5.读者登录" onclick='location.href=("reader")'/><br/>
+					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+		<script src="/static/js/TweenLite.min.js"></script>
+		<script src="/static/js/EasePack.min.js"></script>
+		<script src="/static/js/rAF.js"></script>
+		<script src="/static/js/demo-1.js"></script>
+		<div style="text-align:center;">
+
+</div>
+	</body>
+</html>

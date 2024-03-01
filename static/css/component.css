@@ -9,9 +9,13 @@
 	z-index: 1;
 }
 
-.demo-1 .large-header {
+/*.demo-1 .large-header {
 	background-image: url('/static/images/demo-1-bg.jpg');
 }
+*/
+.demo-1 .large-header {
+	background-image: url('/static/images/yh3.jpg');
+	
 .logo_box{
 	width: 400px;
 	height: 500px;

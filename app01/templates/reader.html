@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+{% load rbac %}
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="/static//css/demo.css"/>
+    {#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">#}
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="/static/css/component.css"/>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <!--[if IE]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+    <style type="text/css">
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #010ab1;
+            font-weight: 500;
+            font-family: "Microsoft YaHei", "宋体", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+        }
+
+
+        .large-header {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            {#justify-content: center;#}
+            align-items: center;
+        }
+
+        div.search {
+            padding: 30px 0;
+            width: 330px;
+        }
+
+        form {
+            position: relative;
+            width: 320px;
+            margin: 0 auto;
+        }
+
+        input, button {
+            border: none;
+            outline: none;
+        }
+
+        input {
+            width: 100%;
+            height: 42px;
+            padding-left: 13px;
+        }
+
+        button {
+            height: 42px;
+            width: 42px;
+            cursor: pointer;
+        }
+
+
+        /*搜索框7*/
+        .bar7 form {
+            height: 42px;
+        }
+
+        .bar7 input {
+            width: 250px;
+            border-radius: 42px;
+            border: 2px solid #324B4E;
+            background: #F9F0DA;
+            transition: .3s linear;
+        }
+
+        .bar7 button {
+
+            width: 60px;
+            float: right;
+        }
+
+        .first_line {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        table td, table th {
+            border: 1px solid #cad9ea;
+            color: #666;
+            height: 30px;
+        }
+
+        table thead th {
+            background-color: #CCE8EB;
+            width: 100px;
+        }
+
+        table tr:nth-child(odd) {
+            background: #fff;
+        }
+
+        table tr:nth-child(even) {
+            background: #F5FAFA;
+        }
+
+        .btnmid {
+            padding-bottom: 2px;
+            font-size: 30px;
+            font-family: STFangsong;
+            color: white;
+            background: rgba(220, 38, 38, 0);;
+            border-width: 0px; /*边框透明*/
+            outline: none; /*点击后没边框*/
+        }
+    </style>
+    <script type="text/javascript">
+        function setup(htmlComponent) {
+
+            document.getElementById("Login").addEventListener("click", function (event) {
+                var name = document.getElementById('Name').value;
+                var pwd = document.getElementById('pwd').value;
+                var add = 'and'
+                htmlComponent.Data = JSON.stringify(name + add + pwd);
+            });
+
+            htmlComponent.addEventListener("DataChanged", function (event) {
+                document.getElementById("dataDisplay").innerHTML = htmlComponent.Data;
+                document.getElementById("dataDisplay").style.visibility = 'visible';
+            });
+
+            document.getElementById("Name").addEventListener("focus", function () {
+                document.getElementById("dataDisplay").style.visibility = 'hidden';
+            });
+
+            document.getElementById("pwd").addEventListener("focus", function () {
+                document.getElementById("dataDisplay").style.visibility = 'hidden';
+            });
+        }
+
+        function check() {
+            if ({{status}}==1
+        )
+            windows.location.href = 'choose'
+        else
+            windows.location.href = 'login'
+        }
+
+        function txt_onfocus(tag) {
+
+            if (tag.value == tag.defaultValue) {
+
+                tag.value = '';
+
+                tag.className = 'highlight';
+
+            }
+
+        }
+
+        function txt_onblur(tag) {
+
+            if (tag.value == '') {
+
+                tag.value = tag.defaultValue;
+
+                tag.className = 'init';
+
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container demo-1">
+    <div class="content">
+        <div class="flex00">
+            <div id="large-header" class="large-header">
+{#                <canvas id="demo-canvas" height="0"></canvas>#}
+                <div style="margin-left:0px;margin-top: 100px;width: 60%">
+                    <input type="text" class="btnmid" value="{{ request.session.info.name }},欢迎来到个人中心"/><br/>
+                </div>
+                <div class="first_line">
+                    <button style="width: 15%;border-radius: 15px" onclick='location.href=("reader_borrow")'>查看借阅记录
+                    </button>
+                    <button style="width: 15%;border-radius: 15px" onclick='location.href=("/hot/book/")'>查看热门书籍
+                    </button>
+
+                    <div class="search bar7">
+                        <form action="" method="get">
+                            <label><input type="text" name="book_name" placeholder="请输入关键字"/></label>
+                            <lable>
+                                <button type="submit" style="border-radius: 15px">搜索</button>
+                            </lable>
+                        </form>
+                    </div>
+                </div>
+                <table width="70%" class="table">
+                    <caption>
+                        <h2 class="red-text" style="color: rgb(255, 255, 255);">搜索结果</h2><!--h2颜色-->
+                    </caption>
+                    <thead>
+                    <tr>
+                        <th>
+                            编号
+                        </th>
+                        <th>
+                            书名
+                        </th>
+                        <th>
+                            作者
+                        </th>
+                        <th>
+                            类别
+                        </th>
+                        <th>
+                            出版社
+                        </th>
+                        <th>
+                            借阅次数
+                        </th>
+                        <th>
+                            状态
+                        </th>
+                    </tr>
+                    </thead>
+
+                    {% for book in queryset %}
+                        <tr>
+                            <td>
+                                {{ book.book_id }}
+                            </td>
+                            <td>
+                                {{ book.title }}
+                            </td>
+                            <td>
+                                {{ book.author }}
+                            </td>
+                            <td>
+                                {{ book.class_name }}
+                            </td>
+                            <td>
+                                {{ book.publish }}
+                            </td>
+                            <td>
+                                {{ book.borrow_times }}
+                            </td>
+                            <td>
+
+                                {% if book.borrow_state == 1 %}
+                                    {{ book.get_borrow_state_display }}
+                                    <a style="width: 50px" href="{% memory_url request 'borrow_book' pk=book.id %}">借阅</a>
+                                {% else %}
+                                    {{ book.get_borrow_state_display }}
+                                {% endif %}
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div><!-- /container -->
+
+
+<script src="/static/js/TweenLite.min.js"></script>
+<script src="/static/js/EasePack.min.js"></script>
+<script src="/static/js/rAF.js"></script>
+<script src="/static/js/demo-1.js"></script>
+<div style="text-align:center;">
+
+</div>
+</body>
+</html>
